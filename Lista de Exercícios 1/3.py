@@ -9,12 +9,56 @@ Atribua uma sêquencia de 20 valores e faça o gráfico (x,y) desta função.
 
 import numpy as np
 import matplotlib.pyplot as plt
-import random as rd
 
+def Delta(a, b, c):
 
+    delta = b ** 2 - 4 * a * c
+
+    return delta
+
+def Baskara(a, b, c):
+
+    delta = Delta(a, b, c)
+
+    x1 = (-b + (delta ** 1/2)) / (2 * a)
+    x2 = (-b - (delta ** 1 / 2)) / (2 * a)
+
+    Grafico(a, b, c, delta, x1, x2)
+
+def Grafico(a, b, c, delta, x1, x2):
+
+    eixoX = []
+    eixoY = []
+    zero = []
+
+    variacao = abs(x1 - x2)
+    if variacao < 3:
+        variacao = 3
+
+    for x in np.arange(x1 - variacao, x2 + variacao, variacao / 100):
+        y = a * (x ** 2) + b * (x) + c
+        eixoX.append(x)
+        eixoY.append(y)
+        zero.append(0.0)
+    plt.plot(eixoX, eixoY, color="blue")
+    plt.plot(eixoX, zero, color="black")
+
+    print('='*50)
+    print('\t\t\tPosições do gráfico')
+    print('=' * 50)
+
+    for i in range(len(eixoX)):
+        print(f'[{eixoX[i]}, {eixoY[i]}]')
+
+    print('=' * 50)
+
+    plt.show()
 
 if '__main__':
 
-    d = 1
+    # x² − 3x + 2
+    a = 1
+    b = 3
+    c = 2
 
-    print(d)
+    Baskara(a, b, c)

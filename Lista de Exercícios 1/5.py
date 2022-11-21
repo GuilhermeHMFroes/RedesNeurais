@@ -31,9 +31,8 @@ def DesvioPadrao(vet):
 if '__main__':
 
     tamVet = 10
-    #vet = np.random.randint(1, 99, size=(tamVet))
-    vet = [3, 7, 6, 5, 4]
+    vet = np.random.randint(1, 99, size=(tamVet))
+    #vet = [3, 7, 6, 5, 4]
     print(f'Vetor: {vet}')
 
     DesvioPadrao(vet)
-
