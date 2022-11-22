@@ -40,11 +40,16 @@ def Grafico(a, b, c, delta, x1, x2):
         eixoX.append(x)
         eixoY.append(y)
         zero.append(0.0)
+
+    for i in range(len(eixoX)):
+        eixoX[i] = round(eixoX[i] , 2)
+        eixoY[i] = round(eixoY[i], 2)
+
     plt.plot(eixoX, eixoY, color="blue")
     plt.plot(eixoX, zero, color="black")
 
     print('='*50)
-    print('\t\t\tPosições do gráfico')
+    print('\t\t\t\tPosições do gráfico')
     print('=' * 50)
 
     for i in range(len(eixoX)):
