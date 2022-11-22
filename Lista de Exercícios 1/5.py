@@ -3,7 +3,7 @@
 Exercício 5
 
 Dado um vetor com 10 valores, escreva as funções que calculam a média e o desvio padrão desse vetor.
-Compare os resultados de suas funções com os resultados obtidos pelas funções mean e sd.
+Compare os resultados de suas funções com os resultados obtidos pelas funções mean e std.
 
 """
 
@@ -16,23 +16,39 @@ def Media(vet):
     return media
 
 def DesvioPadrao(vet):
+    '''
+
+    Fórmula desvio padrão populacional: O = (Somatório(x - média)²/n) ** 1/2
+
+    '''
 
     media = Media(vet)
 
-    varianca = 0
+    somatorio = 0
     for i in range(len(vet)):
-        varianca = (vet[i] - media)**2 + varianca
-    varianca = varianca / len(vet)
+        somatorio = ((vet[i] - media) ** 2) + somatorio
+        a = ((vet[i] - media) ** 2)
 
-    desvioPadrao = varianca**1/2
+    desvioPadrao = (somatorio / len(vet)) ** (1 / 2)
 
-    print(f'Desvio padrão: {desvioPadrao}')
+    print(f'Desvio padrão: {desvioPadrao}\n')
 
 if '__main__':
 
     tamVet = 10
     vet = np.random.randint(1, 99, size=(tamVet))
-    #vet = [3, 7, 6, 5, 4]
-    print(f'Vetor: {vet}')
+    print('=' * 50, '\n\t\t\t\t\tVetor')
+    print('=' * 50)
+    print(f'Vetor: {vet}\n')
 
+    print('='*50, '\n\t\t\tResultado das minhas funções')
+    print('='*50)
     DesvioPadrao(vet)
+
+    print('=' * 50, '\n\t\tResultado das funções mean e std')
+    print('=' * 50)
+    md = np.mean(vet)
+    print(f'mean: {md}')
+    dP = np.std(vet)
+    print(f'std: {dP}\n')
+    print('=' * 50)
