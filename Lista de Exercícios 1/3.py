@@ -47,6 +47,7 @@ def Grafico(a, b, c, delta, x1, x2):
 
     plt.plot(eixoX, eixoY, color="blue")
     plt.plot(eixoX, zero, color="black")
+    plt.plot(zero, eixoY, color="black")
 
     print('='*50)
     print('\t\t\t\tPosições do gráfico')
