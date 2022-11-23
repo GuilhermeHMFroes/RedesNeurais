@@ -23,7 +23,7 @@ def Baskara(a, b, c):
     x1 = (-b + (delta ** 1/2)) / (2 * a)
     x2 = (-b - (delta ** 1 / 2)) / (2 * a)
 
-    Grafico(a, b, c, delta, x1, x2)
+    Grafico(a, b, c, x1, x2)
 
 def Grafico(a, b, c, x1, x2):
 
