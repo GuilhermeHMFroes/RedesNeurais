@@ -9,7 +9,7 @@ Dada uma lista com a nota de cinco alunos, encontre a média, o desvio padrão e
 import random as rd
 import numpy as np
 
-if '__main__':
+if __name__ == '__main__':
 
     qtAlunos = 5
     ntAlunos = []

@@ -60,11 +60,11 @@ def Grafico(a, b, c, delta, x1, x2):
 
     plt.show()
 
-if '__main__':
+if __name__ == '__main__':
 
     # x² − 3x + 2
     a = 1
-    b = 3
+    b = -3
     c = 2
 
     Baskara(a, b, c)

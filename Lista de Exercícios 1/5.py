@@ -33,7 +33,7 @@ def DesvioPadrao(vet):
 
     print(f'Desvio padrão: {desvioPadrao}\n')
 
-if '__main__':
+if __name__ == '__main__':
 
     tamVet = 10
     vet = np.random.randint(1, 99, size=(tamVet))
